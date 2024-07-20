@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% include "navbar.html" %}
+{% block title %}
+accesories
+{% endblock  %}
+
+{% block content %}
+<!-- Product Cards -->
+
+{% comment %} {% for category in categories  %}
+<ul>
+    <li><a href="{% url 'product_by_category' category.slug %}">{{ category.category_name }}</a></li>
+</u>
+{% endfor %} {% endcomment %}
+zsdfdf
+{% for product in products %}
+<div class="product-section">
+    <div class="product-card">  
+        <img src="{{ product.images.url }}" alt="Product Image">
+        <div class="product-card-info">
+            <h2><a href="">{{ product.product_name }}</a></h2>
+            
+            <p class="price">{{ product.price }}</p>
+            <a  class = 'product-card' href='{{ product.get_url_accesories }}'>Add to Cart</a>    
+        </div>
+    </div>
+    {% endfor %}s
+
+
+
+       
+    
+{% endblock content %}s
+
+{% include "footer.html" %}

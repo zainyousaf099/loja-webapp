@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- SECTION -->
+    <div class="container">
+      {% comment %} {% for banner in banner_image %} {% endcomment %}
+        {% comment %} <div class="row"> {% endcomment %}
+          <div class="left-column">
+            <img src="{{ banner.image_banner_1.url }}" alt="Left Image" />
+          </div>
+          <div class="right-column">
+            <div class="top-image">
+              <img src="{% static 'images/section_1_image2.webp' %}" alt="Top Right Image" />
+            </div>
+            <div class="bottom-images">
+              <img src="{% static 'images/section_1_image3.webp' %}" alt="Bottom Right Image 1" />
+              <img src="{% static 'images/section_1_image04.webp' %}" alt="Bottom Right Image 2" />
+            </div>
+          </div>
+        {% comment %} </div> {% endcomment %}
+      {% comment %} {% endfor %} {% endcomment %}
+    </div>
+    <!-- SECTION END -->
+{% endblock %}

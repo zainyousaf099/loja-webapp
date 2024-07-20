@@ -1,0 +1,35 @@
+{% load static %}
+<header>
+    <div class="top-bar">
+      <div class="country-selector">COUNTRY ▼</div>
+      <div class="free-delivery">FREE DELIVERY</div>
+      <div class="social-media">
+        <a href="#"><img src="{% static 'instagram-icon.png' %}" alt="Instagram" /></a>
+        <a href="#"><img src="{% static 'facebook-icon.png' %}" alt="Facebook" /></a>
+      </div>
+    </div>
+    <div class="main-nav">
+      <div class="nav-left">
+        <a href="#" class="contact-us">CONTACT US</a>
+      </div>
+      <div class="logo">
+        <nav>
+          <img src="{% static 'images/loja logo (1).png' %}" alt="Loja" />
+       </nav>
+      
+      </div>
+      <div class="nav-right">
+        <a href="login.html" class="login-register">LOGIN / REGISTER</a>
+      </div>
+    </div>
+    <nav class="bottom-nav">
+      <ul>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'store' %}">CLOTHES</a></li>
+        <li><a href="{% url 'accesories' %}">ACCESSORIES</a></li>
+        <li><a href="{% url 'appliances' %}">APPLIANCES</a></li>
+        <li><a href="#">LOJA STORE</a></li>
+        <li><a href="#">ABOUT US</a></li>
+      </ul>
+    </nav>
+  </header>

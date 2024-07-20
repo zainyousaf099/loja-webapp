@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Product details
+{% endblock title %}
+
+{% block content %}
+<main>
+    <div class="product-details">
+        <div class="main-image">
+            <img src="{{ single_product.images.url }}" alt="{{ single_product.product_name }}">
+            <div class="thumbnails">
+                <img src="{% static 'images/g1.jpg' %}" alt="{{ single_product.product_name }} Thumbnail">
+                <img src="{% static 'images/g1.jpg' %}" alt="{{ single_product.product_name }} Thumbnail">
+                <img src="{% static 'images/g1.jpg' %}" alt="{{ single_product.product_name }} Thumbnail">
+            </div>
+        </div>
+        <div class="product-info">
+            <h3>{{ single_product.product_name }}</h3>
+            <p>{{ single_product.description }}</p>
+            <div class="price">
+                <span>PKR {{ single_product.price }}</span>
+            </div>
+            <div class="actions">
+
+                {% if single_product.stock <= 0 %}
+                    <h1> OUT OF STOCK </h1>
+
+                {% else %}
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <section class="terms-reviews">
+        <div class="terms">
+            <h3>Terms & Condition</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Parturient lorem purus justo, ultricies. Sollicitudin odio elementum urna placerat lacus, vulputate.</p>
+        </div>
+        <div class="reviews">
+            <h3>Reviews Stock</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Parturient lorem purus justo, ultricies. Sollicitudin odio elementum urna placerat lacus, vulputate.</p>
+        </div>
+    </section>
+    <section class="related-products">
+        <h2>Related Products</h2>
+        <section class="product-section">
+            <div class="product-card">
+                <a href="#">
+                    <img src="{% static 'images/g2.jpg' %}" alt="Product Image">
+                </a>
+                <div class="product-details">
+                    <h3 class="add_to_Cart_title">Product Title</h3>
+                    <div class="bottom">
+                        <div class="price"><del>$99.99</del> $69.99</div>
+                        <a href="#" class="add-to-cart">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <a href="#">
+                    <img src="{% static 'images/g2.jpg' %}" alt="Product Image">
+                </a>
+                <div class="product-details">
+                    <h3 class="add_to_Cart_title">Product Title</h3>
+                    <div class="bottom">
+                        <div class="price"><del>$99.99</del> $69.99</div>
+                        <a href="#" class="add-to-cart">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <a href="#">
+                    <img src="{% static 'images/g2.jpg' %}" alt="Product Image">
+                </a>
+                <div class="product-details">
+                    <h3 class="add_to_Cart_title">Product Title</h3>
+                    <div class="bottom">
+                        <div class="price"><del>$99.99</del> $69.99</div>
+                        <a href="#" class="add-to-cart">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
+<div class="lojabanner">
+    <img src="{% static 'images/loja banner.jpg' %}" alt="Loja Banner">
+</div>
+{% endblock content %}
